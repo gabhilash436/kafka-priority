@@ -45,8 +45,7 @@ public class BucketBasedProducer {
             for (;;) {
 
                 int value = counter.incrementAndGet();
-                int index = Utils.toPositive(value) % buckets.length;
-                final String recordKey = buckets[index] + "-" + value;
+                final String recordKey = "Platinum-" + value;
 
                 ProducerRecord<String, String> record =
                     new ProducerRecord<>(ORDERS_PER_BUCKET, recordKey, "Value");
